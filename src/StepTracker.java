@@ -8,8 +8,6 @@ class StepTracker {
     StepTracker(Scanner scan) {
         scanner = scan;
 
-        MonthData monthData = new MonthData();
-
         for (int i = 0; i < monthToData.length; i++) {
             monthToData[i] = new MonthData();
         }
@@ -21,7 +19,7 @@ class StepTracker {
         if (monthNumber >= 1 && monthNumber <= 12) {
             System.out.println("Вы выбрали месяц: " + monthNumber);
         } else {
-            System.out.println("Повторите ввод номера месяца");
+            System.out.println("Некорректный ввод. Номер месяца должен иметь значение от 1 до 12");
             return;
         }
 
@@ -30,17 +28,16 @@ class StepTracker {
         if (dayNumber >= 1 && dayNumber <= 30) {
             System.out.println("Вы выбрали день: " + dayNumber);
         } else {
-            System.out.println("Повторите ввод дня");
+            System.out.println("Некорректный ввод. Номер дня должен иметь значение от 1 до 30");
             return;
         }
 
         System.out.println("Введите количество шагов");
         int stepNumber = scanner.nextInt();
         if (stepNumber > 0) {
-            stepNumber = stepNumber;
             System.out.println("Ваши шаги: " + stepNumber);
         } else {
-            System.out.println("Повторите ввод количества шагов");
+            System.out.println("Некорректный ввод. Количество шагов должно быть больше 0");
             return;
         }
 
@@ -54,7 +51,7 @@ class StepTracker {
         if (newGoalOfSteps > 0) {
             goalByStepsPerDay = newGoalOfSteps;
         } else {
-            System.out.println("Введите значение больше 0");
+            System.out.println("Некорректный ввод. Количество шагов должно быть больше 0");
         }
     }
 
@@ -66,7 +63,7 @@ class StepTracker {
         if (monthNumber >= 1 && monthNumber <= 12) {
             System.out.println("Вы выбрали месяц: " + monthNumber);
         } else {
-            System.out.println("Введите число от 1 до 12");
+            System.out.println("Некорректный ввод. Номер месяца должен иметь значение от 1 до 12");
             return;
         }
 

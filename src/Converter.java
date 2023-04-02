@@ -1,16 +1,16 @@
-public class Converter {
+class Converter {
 
-    Converter() {
-    }
+    int STEPS_TO_KM_BASIS = 100000;
+    int CALORIES_BASIS = 1000;
+
+    int stepLengthCm = 75;
+    int caloriesInOneStep = 50;
+
     int convertToKm(int steps) {
-        int lenghtOfStep = 71;
-        int distance = (lenghtOfStep * steps) / 100000;
-        return distance;
+        return (steps * stepLengthCm) / STEPS_TO_KM_BASIS;
     }
 
     int convertStepsToKilocalories(int steps) {
-        int oneStep = 50;
-        int сalories = (oneStep * steps) / 1000;
-        return сalories;
+        return (steps * caloriesInOneStep) / CALORIES_BASIS;
     }
 }
